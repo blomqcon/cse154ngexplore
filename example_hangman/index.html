@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app='hangmanApp'>
+  <head>
+    <title>Hangman</title>
+    <link href="css/hangman.css" type="text/css" rel="stylesheet" />
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"></script>
+
+    <script type="text/javascript" src='js/services.js'></script>
+    <script type="text/javascript" src='js/app.js'></script>
+  </head>
+  
+  <body ng-controller="GameCtrl">
+    <h1>Hangman Step by Step (angular edition)</h1>
+    
+    <div>
+      <img ng-src="https://webster.cs.washington.edu/cse154/labs/5/hangman{{guesses}}.gif" alt="hangman" /> <br />
+      ({{guesses}} guesses remaining)
+    </div>
+    
+    <div id="clue"> {{clue}} </div>
+    
+		<div>
+			<input type="text" size="1" maxlength="1" autofocus="autofocus" ng-model="guess" />
+			<button ng-click="makeGuess(guess)" ng-disabled="win || lose">Guess</button>
+		</div>
+    
+		<div>
+			<button ng-click="newGame()">New Game</button>
+		</div>
+
+    
+    <div id="letters">
+		  <button ng-repeat="letter in availableNoSpace" ng-click="makeGuess(letter)" ng-disabled="win || lose">{{letter}}</button>
+    </div>
+
+    
+  	<div id="win" ng-show="win"> Congratulations!  You win! </div>
+  	<div id="lose" ng-show="lose"> Game over! You lost! </div>
+
+    <div id="hint">
+    	HINT: The word is: <code>"{{word}}"</code> <br />
+    	The letters available are: <code>"{{available}}"</code>
+    </div>
+  </body>
+</html>

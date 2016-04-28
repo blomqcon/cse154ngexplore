@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="2048App" class="no-js">
+<head lang="en">
+    <title>2048</title>
+
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.20/angular.min.js"></script>
+		<script src="scripts/angular/angular.min.js"></script>
+    <script src="scripts/angular/angular-cookies.min.js"></script>
+    <script src="scripts/angular/angular-route.min.js"></script>
+		
+    <script src="scripts/templates.js"></script>
+		<script src="scripts/keyboard/keyboard.js"></script>
+		<script src="scripts/grid/grid.js"></script>
+		<script src="scripts/grid/grid_directive.js"></script>
+		<script src="scripts/grid/tile_directive.js"></script>
+		<script src="scripts/game/game.js"></script>
+    <script src="scripts/app.js"></script>
+</head>
+<body>
+		
+		
+    <div class="container" id="content" ng-controller="GameController as gctrl">
+		<h1>CSE 154 - 2048 Game</h1>
+			<div class="row">
+					<div id="game-board" class="col-md-9">
+							<div grid ng-model="gctrl.gameManager"></div>
+					</div>
+					<div id="user-board" class="col-md-3">
+							<div class="score">
+									<p>Current Score: {{ gctrl.gameManager.currentScore }}</p>
+							</div>
+							<div class="best-score">
+									<p>Best Score: {{ gctrl.gameManager.bestScore }}</p>
+							</div>
+					</div>
+			</div>
+			
+			<p>Credit: Derek Hu</p>
+			<p><a src="https://github.com/derek-dchu/angular-2048">https://github.com/derek-dchu/angular-2048</a></p>
+		</div>
+			
+</body>
+</html>

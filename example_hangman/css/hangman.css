@@ -1,0 +1,60 @@
+/*
+Web Programming Step by Step
+Style sheet for hangman lab (PHP regex and cookies)
+*/
+
+body {
+	text-align: center;
+}
+
+body, input, button, select, option, textarea {
+	font-family: Calibri, Helvetica, Arial, sans-serif;
+	font-size: 14pt;
+	font-weight: bold;
+}
+
+#clue {
+	font-family: "Courier New", monospace;
+	font-size: larger;
+	letter-spacing: 10px;
+	margin: 1em;
+}
+
+#letters {
+	padding: 1em;
+}
+
+#letters form {
+	display: inline;
+}
+
+#letters input[type="submit"] {
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+#hint {
+	color: #888;
+	font-size: smaller;
+	margin: 1em;
+}
+
+#hint code {
+	white-space: pre;
+}
+
+#win {
+	color: green;
+	font-color: larger;
+	background-color: #ddffdd;
+	padding: 1em;
+	margin: 1em;
+}
+
+#lose {
+	color: red;
+	font-color: larger;
+	background-color: #ffdddd;
+	padding: 1em;
+	margin: 1em;
+}

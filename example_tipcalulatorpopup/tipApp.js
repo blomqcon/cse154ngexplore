@@ -1,0 +1,1 @@
+var tipApp = angular.module('tipApp', ['tipControllers']);
